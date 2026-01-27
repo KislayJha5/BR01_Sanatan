@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PASTE THE GOOGLE CODE HERE -->
+    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CODE_HERE" />
+
+    <title>BR01 Sanatan Creator | Dharma & Sewa</title>
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF9933; /* Saffron */
+            --secondary: #800000; /* Deep Maroon */
+            --accent: #FFD700; /* Gold */
+            --bg-light: #FFF5E1; /* Cream */
+            --text-dark: #2C1810;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tiro Devanagari Hindi', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            background-image: radial-gradient(#ffcc80 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo {
+            font-family: 'Rozha One', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent); }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('https://images.unsplash.com/photo-1604071536257-2c9c2288a6d9?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+            position: relative;
+            color: var(--white);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(44, 24, 16, 0.75); /* Darker overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .om-symbol {
+            font-size: 6rem;
+            color: var(--accent);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            animation: float 4s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: #ffe0b2;
+            font-style: italic;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- Common Section Styles --- */
+        .section-container {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Rozha One', serif;
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: 'ॐ';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 10px;
+        }
+
+        /* --- History Section --- */
+        .history-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary);
+            line-height: 1.8;
+            color: #4a2c2a;
+        }
+        .history-content h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .history-content p { margin-bottom: 20px; }
+
+        /* --- Festival Calendar Section --- */
+        .festival-list {
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .festival-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--secondary);
+            transition: 0.3s;
+        }
+
+        .festival-item:hover {
+            transform: translateX(10px);
+            border-left-color: var(--primary);
+        }
+
+        .festival-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .festival-date {
+            background: var(--bg-light);
+            padding: 8px 15px;
+            border-radius: 50px;
+            color: var(--text-dark);
+            font-weight: bold;
+            border: 1px solid var(--primary);
+        }
+
+        /* --- Mantra Section --- */
+        .mantra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mantra-card {
+            background: #fff8e7;
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .mantra-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .mantra-title {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sanskrit-text {
+            font-size: 1.1rem;
+            color: #d35400;
+            margin-bottom: 10px;
+            font-weight: bold;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .meaning-text {
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* --- Library & Bhajans --- */
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background: linear-gradient(135deg, #fff, #fff3e0);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--accent);
+            transition: 0.3s;
+        }
+
+        .book-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .book-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .btn-read {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 10px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-read:hover { background: var(--primary); }
+
+        /* --- Social Media Hub --- */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .social-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 2px solid transparent;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 153, 51, 0.2);
+        }
+
+        .social-icon { font-size: 3rem; margin-bottom: 15px; }
+        .fb { color: #1877F2; }
+        .insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .yt { color: #FF0000; }
+        .x-icon { color: #000; }
+        .wa { color: var(--whatsapp); }
+
+        /* --- Modal --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--bg-light);
+            width: 90%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 10px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: center;
+            border: 4px solid var(--primary);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px; right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--secondary);
+            z-index: 10;
+        }
+
+        /* Modal Text Styles */
+        .modal-text-red {
+            white-space: pre-line;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #b90e0a; /* Red for Hanuman Chalisa */
+            font-weight: 500;
+        }
+        
+        .modal-text-dark {
+            white-space: pre-line;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #2C1810;
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #1a0f0a;
+            color: #d4a373;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2.2rem; }
+            .hero { min-height: 60vh; }
+            .festival-item { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-om"></i> BR01 <span>Sanatan</span> Creator</a>
+        <nav>
+            <a href="#history">History</a>
+            <a href="#festivals">Festivals</a>
+            <a href="#mantra">Mantra</a>
+            <a href="#library">Scriptures</a>
+            <a href="#social">Connect</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="om-symbol">ॐ</div>
+            <h1>॥ धर्मो रक्षति रक्षितः ॥</h1>
+            <p class="tagline">Connecting the digital world to the eternal roots of Sanatan Dharma.</p>
+            <a href="#social" class="btn-read" style="background: var(--white); color: var(--secondary); font-weight: bold;">Join Our Community</a>
+        </div>
+    </section>
+
+    <!-- History of Sanatan Dharma Section -->
+    <div class="section-container" id="history">
+        <h2 class="section-title">History of Sanatan Dharma</h2>
+        <div class="history-content">
+            <h3>The Eternal Way</h3>
+            <p>
+                Sanatan Dharma (सनातन धर्म), often referred to as Hinduism, is the world's oldest living religion. Unlike other religions, it has no single founder, no single scripture, and no single set of agreed-upon teachings. 'Sanatan' means eternal, and 'Dharma' signifies duty, cosmic law, or way of life. It emphasizes the eternal values that sustain the universe.
+            </p>
+            <h3>Origins & Texts</h3>
+            <p>
+                The roots of Sanatan Dharma go back thousands of years to the Indus Valley Civilization and the Vedic period. Its wisdom is preserved in the Vedas (Rigveda, Samaveda, Yajurveda, Atharvaveda), the Upanishads (philosophical texts), the Puranas, and the great epics: the Ramayana and the Mahabharata (which includes the Bhagavad Gita).
+            </p>
+            <h3>Core Beliefs</h3>
+            <p>
+                At its core, Sanatan Dharma believes in:
+                <br><strong>Brahman:</strong> The ultimate, formless, infinite reality.
+                <br><strong>Atman:</strong> The eternal soul within every being.
+                <br><strong>Karma:</strong> The law of cause and effect.
+                <br><strong>Moksha:</strong> Liberation from the cycle of birth and death.
+                <br>It champions the idea of "Vasudhaiva Kutumbakam" — The World is One Family.
+            </p>
+        </div>
+    </div>
+
+    <!-- Hindu Calendar 2026 Section -->
+    <div class="section-container" id="festivals">
+        <h2 class="section-title">Hindu Festivals 2026</h2>
+        <ul class="festival-list">
+            <li class="festival-item">
+                <span class="festival-name">Maha Shivaratri</span>
+                <span class="festival-date">15 February 2026 (Sunday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Holi (Dhulandi)</span>
+                <span class="festival-date">4 March 2026 (Wednesday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Chaitra Navratri Starts</span>
+                <span class="festival-date">19 March 2026 (Thursday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Ram Navami</span>
+                <span class="festival-date">27 March 2026 (Friday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Hanuman Jayanti</span>
+                <span class="festival-date">2 April 2026 (Thursday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Raksha Bandhan</span>
+                <span class="festival-date">27 August 2026 (Thursday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Krishna Janmashtami</span>
+                <span class="festival-date">4 September 2026 (Friday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Ganesh Chaturthi</span>
+                <span class="festival-date">14 September 2026 (Monday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Shardiya Navratri Starts</span>
+                <span class="festival-date">11 October 2026 (Sunday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Durga Puja (Vijayadashami)</span>
+                <span class="festival-date">20 October 2026 (Tuesday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Diwali (Deepavali)</span>
+                <span class="festival-date">8 November 2026 (Sunday)</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Chhath Puja (Sandhya Arghya)</span>
+                <span class="festival-date">14 November 2026 (Saturday)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mantra Sangrah Section -->
+    <div class="section-container" id="mantra" style="background-color: #fffaf0;">
+        <h2 class="section-title">Mantra Sangrah</h2>
+        <div class="mantra-grid">
+            
+            <!-- 1. Ram Vandana -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-praying-hands"></i> Ram Vandana</div>
+                <p class="sanskrit-text">
+                    रामाय रामभद्राय रामचंद्राय वेधसे ।
+                    रघुनाथाय नाथाय सीताया: पतये नम:॥
+                </p>
+                <p class="meaning-text">"मैं राम, रामभद्र, रामचंद्र, विधात स्वरूप, श्री रघुनाथ जी एवं माता श्री सीता जी के स्वामी की वंदना करता हूं।"</p>
+            </div>
+
+            <!-- New Krishna Mantra (Added as requested) -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-feather-alt"></i> Krishna Mantra</div>
+                <p class="sanskrit-text">
+                    कृष्णाय वासुदेवाय हरये परमात्मने ।
+                    प्रणत क्लेश नाशाय गोविन्दाय नमो नमः ॥
+                </p>
+                <p class="meaning-text">"वसुदेव के पुत्र भगवान श्रीकृष्ण, जो परमात्मा हैं और सभी क्लेशों (दुःखों) को नाश करने वाले हैं, उन गोविंद को मैं बारंबार नमन करता हूँ।"</p>
+            </div>
+
+            <!-- 2. Ram Taraka Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-om"></i> Ram Taraka Mantra</div>
+                <p class="sanskrit-text">
+                    राम राम रामेति रमे रामे मनोरमे ।
+                    सहस्रनाम तत्तुल्यं रामनाम वरानने॥
+                </p>
+                <p class="meaning-text">"शिवजी पार्वतीजी से कहते हैं: 'राम' नाम विष्णु सहस्रनाम के तुल्य है। मैं भी इन्हीं मनोरम राम में रमता हूं।"</p>
+            </div>
+
+            <!-- 3. Gayatri Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-sun"></i> Gayatri Mantra</div>
+                <p class="sanskrit-text">
+                    ॐ भूर्भुव: स्व: तत्सवितुर्वरेण्यं ।
+                    भर्गो देवस्य धीमहि धियो यो न: प्रचोदयात्॥
+                </p>
+                <p class="meaning-text">"सृष्टिकर्ता प्रकाशमान परामात्मा के तेज का हम ध्यान करते हैं, परमात्मा का वह तेज हमारी बुद्धि को सद्मार्ग की ओर चलने के लिए प्रेरित करें।"</p>
+            </div>
+
+            <!-- 4. Mahamrityunjaya Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-leaf"></i> Mahamrityunjaya</div>
+                <p class="sanskrit-text">
+                    ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।
+                    उर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय माऽमृतात् ॥
+                </p>
+                <p class="meaning-text">"हम त्रिनेत्र (शिव) को पूजते हैं, जो सुगंधित हैं और हमारा पोषण करते हैं। जैसे फल शाखा से मुक्त होता है, वैसे ही हम मृत्यु और नश्वरता से मुक्त हों।"</p>
+            </div>
+
+            <!-- 5. Ganesh Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-elephant"></i> Ganesh Mantra</div>
+                <p class="sanskrit-text">
+                    वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ: ।
+                    निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+                </p>
+                <p class="meaning-text">"हे वक्रतुण्ड, विशाल शरीर और करोड़ों सूर्यों के समान तेजस्वी प्रभु, मेरे सभी कार्यों की बाधाओं को सर्वदा दूर करें।"</p>
+            </div>
+
+            <!-- 6. Maha Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-music"></i> Maha Mantra</div>
+                <p class="sanskrit-text">
+                    हरे कृष्ण, हरे कृष्ण, कृष्ण कृष्ण हरे हरे।
+                    हरे राम, हरे राम, राम राम हरे हरे॥
+                </p>
+                <p class="meaning-text">"यह विष्णु, शिव, राम और कृष्ण चारों का मिलाजुला मंत्र है जो कलियुग में मोक्ष प्रदान करता है।"</p>
+            </div>
+
+            <!-- 7. Hanuman Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-wind"></i> Hanuman Mantra</div>
+                <p class="sanskrit-text">
+                    मनोजवं मारुततुल्यवेगं जितेन्द्रियं बुद्धिमतां वरिष्ठम्।
+                    वातात्मजं वानरयूथमुख्यं श्रीरामदूतम् शरणं प्रपद्ये॥
+                </p>
+                <p class="meaning-text">"जिनकी मन के समान गति और वायु के समान वेग है, जो जितेन्दिय और बुद्धिमानों में श्रेष्ठ हैं, उन श्रीरामदूत की मैं शरण लेता हूं।"</p>
+            </div>
+
+            <!-- 8. Vishnu Mangalam -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-spa"></i> Vishnu Mangalam</div>
+                <p class="sanskrit-text">
+                    मङ्गलम् भगवान विष्णुः मङ्गलम् गरुणध्वजः।
+                    मङ्गलम् पुण्डरी काक्षः मङ्गलाय तनो हरिः॥
+                </p>
+                <p class="meaning-text">"भगवान विष्णु का मंगल हो, गरुड़ध्वज का मंगल हो, कमल नयन प्रभु का मंगल हो, हरि का मंगल हो।"</p>
+            </div>
+
+            <!-- 9. Krishna Mantra (Vasudeva Sutam) -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-feather-alt"></i> Krishna Mantra</div>
+                <p class="sanskrit-text">
+                    वसुदेवसुतं देवं कंसचाणूरमर्दनम्।
+                    देवकीपरमानन्दं कृष्णं वन्दे जगद्गुरुम्॥
+                </p>
+                <p class="meaning-text">"वसुदेव के पुत्र, कंस-चाणूर का मर्दन करने वाले, देवकी को परमानंद देने वाले जगतगुरु श्रीकृष्‍ण को मैं वंदन करता हूं।"</p>
+            </div>
+
+            <!-- 10. Durga Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-shield-alt"></i> Durga Mantra</div>
+                <p class="sanskrit-text">
+                    ॐ जयन्ती मंगला काली भद्रकाली कपालिनी।
+                    दुर्गा क्षमा शिवा धात्री स्वाहा स्वधा नमोऽस्तुते॥
+                </p>
+                <p class="meaning-text">"जयंती, मंगला, काली, भद्रकाली, कपालिनी, दुर्गा, क्षमा, शिवा, धात्री और स्वधा - इन नामों से प्रसिद्ध जगदंबे को नमस्कार है।"</p>
+            </div>
+
+            <!-- 11. Saraswati Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-book-reader"></i> Saraswati Mantra</div>
+                <p class="sanskrit-text">
+                    सरस्वति नमस्तुभ्यं वरदे कामरूपिणी ।
+                    विद्यारम्भं करिष्यामि सिद्धिर्भवतु में सदा॥
+                </p>
+                <p class="meaning-text">"हे वरदायिनी माँ सरस्वती, आपको नमस्कार है। मैं विद्या आरम्भ कर रहा हूँ, मुझे इस कार्य में सदा सिद्धि मिले।"</p>
+            </div>
+
+            <!-- 12. Kartikeya Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-fire"></i> Kartikeya Mantra</div>
+                <p class="sanskrit-text">
+                    देव सेनापते स्कंद कार्तिकेय भवोद्भव।
+                    कुमार गुह गांगेय शक्तिहस्त नमोस्तु ते॥
+                </p>
+                <p class="meaning-text">"देव सेनापति, स्कंद, कार्तिकेय, शक्ति धारण करने वाले प्रभु, आपको मेरा नमन है।"</p>
+            </div>
+
+            <!-- 13. Param Brahma -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-globe"></i> Param Brahma</div>
+                <p class="sanskrit-text">
+                    ॐ नमस्ते परमं ब्रह्मा, नमस्ते परमात्ने।
+                    निर्गुणाय नमस्तुभ्यं, सदुयाय नमो नम:॥
+                </p>
+                <p class="meaning-text">"पराशक्ति परब्रह्म परमात्मा को नमस्कार है। निर्गुण स्वरूप को बारंबार नमस्कार है।"</p>
+            </div>
+
+            <!-- 14. Shani Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-moon"></i> Shani Mantra</div>
+                <p class="sanskrit-text">
+                    ॐ नीलांजन समाभासं रविपुत्रं यमाग्रजम।
+                    छायामार्तण्डसम्भूतं तं नमामि शनैश्चरम्॥
+                </p>
+                <p class="meaning-text">"नीले वर्ण वाले, सूर्य पुत्र, यम के बड़े भाई और छाया-मार्तण्ड से उत्पन्न शनिदेव को मैं नमस्कार करता हूं।"</p>
+            </div>
+
+            <!-- 15. Kathopanishad -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-mountain"></i> Kathopanishad</div>
+                <p class="sanskrit-text">
+                    उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत।
+                    क्षुरस्य धारा निशिता दुरत्यया दुर्गं पथस्तत्कवयो वदन्ति॥
+                </p>
+                <p class="meaning-text">"उठो, जागो और श्रेष्ठ महापुरुषों के सानिध्य में ज्ञान प्राप्त करो। यह पथ छुरे की धार पर चलने जैसा दुर्गम है।"</p>
+            </div>
+
+            <!-- 16. Vidya Shloka -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-graduation-cap"></i> Vidya Shloka</div>
+                <p class="sanskrit-text">
+                    प्रथमेनार्जिता विद्या द्वितीयेनार्जितं धनं।
+                    तृतीयेनार्जितः कीर्तिः चतुर्थे किं करिष्यति॥
+                </p>
+                <p class="meaning-text">"जिसने ब्रह्मचर्य में विद्या, गृहस्थ में धन, और वानप्रस्थ में कीर्ति अर्जित नहीं की, वह संन्यास में क्या करेगा?"</p>
+            </div>
+
+            <!-- 17. Mitra Shloka -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-user-friends"></i> Mitra Shloka</div>
+                <p class="sanskrit-text">
+                    विद्या मित्रं प्रवासेषु भार्या मित्रं गृहेषु च।
+                    रुग्णस्य चौषधं मित्रं धर्मो मित्रं मृतस्य च॥
+                </p>
+                <p class="meaning-text">"प्रवास में विद्या, घर में पत्नी, रोगी के लिए औषधि और मृत्यु के बाद धर्म ही सच्चा मित्र होता है।"</p>
+            </div>
+
+            <!-- 18. Shanti Mantra -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-hands-helping"></i> Shanti Mantra</div>
+                <p class="sanskrit-text">
+                    ॐ सह नाववतु। सह नौ भुनक्तु।
+                    सह वीर्यं करवावहै। तेजस्विनावधीतमस्तु मा विद्विषावहै॥
+                </p>
+                <p class="meaning-text">"परमेश्वर हम (गुरु-शिष्य) की साथ रक्षा करें, साथ पालन करें, हम साथ शक्ति प्राप्त करें, हमारा ज्ञान तेजस्वी हो, हम द्वेष न करें।"</p>
+            </div>
+
+            <!-- 19. Alasya Shloka -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-bed"></i> Alasya Shloka</div>
+                <p class="sanskrit-text">
+                    अलसस्य कुतः विद्या अविद्यस्य कुतः धनम्।
+                    अधनस्य कुतः मित्रम् अमित्रस्य कुतः सुखम्॥
+                </p>
+                <p class="meaning-text">"आलसी को विद्या कहाँ? अनपढ़ को धन कहाँ? निर्धन को मित्र कहाँ? और अमित्र को सुख कहाँ?"</p>
+            </div>
+
+            <!-- 20. Manav Dharma -->
+            <div class="mantra-card">
+                <div class="mantra-title"><i class="fas fa-tree"></i> Manav Dharma</div>
+                <p class="sanskrit-text">
+                    येषां न विद्या न तपो न दानं, ज्ञानं न शीलं न गुणो न धर्मः।
+                    ते मृत्युलोके भुवि भारभूता, मनुष्यरूपेण मृगाश्चरन्ति॥
+                </p>
+                <p class="meaning-text">"जिसमें विद्या, तप, दान, ज्ञान, शील, गुण और धर्म नहीं, वे मनुष्य रूप में धरती पर भार बनकर पशु समान चरते हैं।"</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Library Section -->
+    <div class="section-container" id="library">
+        <h2 class="section-title">Digital Granthalaya & Bhajans</h2>
+        <div class="library-grid">
+            <!-- Hanuman Chalisa -->
+            <div class="book-card">
+                <i class="fas fa-praying-hands book-icon"></i>
+                <h3>Hanuman Chalisa</h3>
+                <p>Strength, Devotion, and Protection.</p>
+                <button onclick="openModal('chalisa')" class="btn-read">Read Now</button>
+            </div>
+
+            <!-- Mahishasur Mardini Stotram -->
+            <div class="book-card">
+                <i class="fas fa-bolt book-icon"></i>
+                <h3>Mahishasur Mardini</h3>
+                <p>Divine Hymn for Goddess Durga.</p>
+                <button onclick="openModal('stotram')" class="btn-read">Read Now</button>
+            </div>
+
+            <!-- Jas Pachra Geet -->
+            <div class="book-card">
+                <i class="fas fa-music book-icon"></i>
+                <h3>Jas Pachra Geet</h3>
+                <p>Folk Songs for Devi Worship.</p>
+                <button onclick="openModal('jas')" class="btn-read">Read Now</button>
+            </div>
+
+            <!-- Bhagavad Gita PDF -->
+            <div class="book-card">
+                <i class="fas fa-book-open book-icon"></i>
+                <h3>Bhagavad Gita</h3>
+                <p>The Divine Song of God.</p>
+                <a href="https://sanskritacademy.delhi.gov.in/sites/default/files/2022-09/final_geeta.pdf" target="_blank" class="btn-read">Read PDF</a>
+            </div>
+
+            <!-- Ramayana PDF -->
+            <div class="book-card">
+                <i class="fas fa-dharmachakra book-icon"></i>
+                <h3>Ramayana</h3>
+                <p>The Journey of Virtue.</p>
+                <a href="https://embassyofindiabangkok.gov.in/public/assets/pdf/Valmiki%20Ramayana%20aur%20Ramakien%20Ek%20Tulnamatmak%20Adhyayan.pdf" target="_blank" class="btn-read">Read PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Hub -->
+    <div class="section-container" id="social" style="background-color: #fffaf0;">
+        <h2 class="section-title">Connect With Us</h2>
+        <div class="social-grid">
+            <a href="https://whatsapp.com/channel/0029VbBAHt6I1rcdNgQOaX0L" target="_blank" class="social-card" style="border-color: var(--whatsapp);">
+                <i class="fab fa-whatsapp social-icon wa"></i>
+                <h3>WhatsApp Channel</h3>
+                <small>Join for Daily Updates</small>
+            </a>
+            <a href="https://www.facebook.com/share/1AJ4JrSmeP/" target="_blank" class="social-card">
+                <i class="fab fa-facebook social-icon fb"></i>
+                <h3>Facebook</h3>
+                <small>BR01_Sanatan_Creator</small>
+            </a>
+            <a href="https://www.instagram.com/br01_sanatan_creator?igsh=MWpyeWFwYml3b2F6YQ==" target="_blank" class="social-card">
+                <i class="fab fa-instagram social-icon insta"></i>
+                <h3>Instagram</h3>
+                <small>@br01_sanatan_creator</small>
+            </a>
+            <a href="https://x.com/BR01SANATAN" target="_blank" class="social-card">
+                <i class="fab fa-x-twitter social-icon x-icon"></i>
+                <h3>X (Twitter)</h3>
+                <small>@BR01SANATAN</small>
+            </a>
+            <a href="https://youtube.com/@allrounder-z4t?si=eeiQxvLguKNPlsDq" target="_blank" class="social-card">
+                <i class="fab fa-youtube social-icon yt"></i>
+                <h3>YouTube</h3>
+                <small>Subscribe Now</small>
+            </a>
+        </div>
+    </div>
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- Modal 1: Hanuman Chalisa -->
+    <div id="chalisa-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('chalisa')">&times;</span>
+            <h2 style="color: var(--secondary); margin-bottom: 20px;">श्री हनुमान चालीसा</h2>
+            <div class="modal-text-red">
+                <strong>॥ दोहा ॥</strong>
+                श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि।
+                बरनऊं रघुबर बिमल जसु, जो दायकु फल चारि।। 
+                बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार।
+                बल बुद्धि बिद्या देहु मोहिं, हरहु कलेस बिकार।। 
+
+                <strong>॥ चौपाई ॥</strong>
+                जय हनुमान ज्ञान गुन सागर।
+                जय कपीस तिहुं लोक उजागर।।
+
+                रामदूत अतुलित बल धामा।
+                अंजनि-पुत्र पवनसुत नामा।।
+
+                महाबीर बिक्रम बजरंगी।
+                कुमति निवार सुमति के संगी।।
+
+                कंचन बरन बिराज सुबेसा।
+                कानन कुंडल कुंचित केसा।।
+
+                हाथ बज्र औ ध्वजा बिराजै।
+                कांधे मूंज जनेऊ साजै।
+
+                संकर सुवन केसरीनंदन।
+                तेज प्रताप महा जग बन्दन।।
+
+                विद्यावान गुनी अति चातुर।
+                राम काज करिबे को आतुर।।
+
+                प्रभु चरित्र सुनिबे को रसिया।
+                राम लखन सीता मन बसिया।।
+
+                सूक्ष्म रूप धरि सियहिं दिखावा।
+                बिकट रूप धरि लंक जरावा।।
+
+                भीम रूप धरि असुर संहारे।
+                रामचंद्र के काज संवारे।।
+
+                लाय सजीवन लखन जियाये।
+                श्रीरघुबीर हरषि उर लाये।।
+
+                रघुपति कीन्ही बहुत बड़ाई।
+                तुम मम प्रिय भरतहि सम भाई।।
+
+                सहस बदन तुम्हरो जस गावैं।
+                अस कहि श्रीपति कंठ लगावैं।।
+
+                सनकादिक ब्रह्मादि मुनीसा।
+                नारद सारद सहित अहीसा।।
+
+                जम कुबेर दिगपाल जहां ते।
+                कबि कोबिद कहि सके कहां ते।।
+
+                तुम उपकार सुग्रीवहिं कीन्हा।
+                राम मिलाय राज पद दीन्हा।।
+
+                तुम्हरो मंत्र बिभीषन माना।
+                लंकेस्वर भए सब जग जाना।।
+
+                जुग सहस्र जोजन पर भानू।
+                लील्यो ताहि मधुर फल जानू।।
+
+                प्रभु मुद्रिका मेलि मुख माहीं।
+                जलधि लांघि गये अचरज नाहीं।।
+
+                दुर्गम काज जगत के जेते।
+                सुगम अनुग्रह तुम्हरे तेते।।
+
+                राम दुआरे तुम रखवारे।
+                होत न आज्ञा बिनु पैसारे।।
+
+                सब सुख लहै तुम्हारी सरना।
+                तुम रक्षक काहू को डर ना।।
+
+                आपन तेज सम्हारो आपै।
+                तीनों लोक हांक तें कांपै।।
+
+                भूत पिसाच निकट नहिं आवै।
+                महाबीर जब नाम सुनावै।।
+
+                नासै रोग हरै सब पीरा।
+                जपत निरंतर हनुमत बीरा।।
+
+                संकट तें हनुमान छुड़ावै।
+                मन क्रम बचन ध्यान जो लावै।।
+
+                सब पर राम तपस्वी राजा।
+                तिन के काज सकल तुम साजा।
+
+                और मनोरथ जो कोई लावै।
+                सोइ अमित जीवन फल पावै।।
+
+                चारों जुग परताप तुम्हारा।
+                है परसिद्ध जगत उजियारा।।
+
+                साधु-संत के तुम रखवारे।
+                असुर निकंदन राम दुलारे।।
+
+                अष्ट सिद्धि नौ निधि के दाता।
+                अस बर दीन जानकी माता।।
+
+                राम रसायन तुम्हरे पासा।
+                सदा रहो रघुपति के दासा।।
+
+                तुम्हरे भजन राम को पावै।
+                जनम-जनम के दुख बिसरावै।।
+
+                अन्तकाल रघुबर पुर जाई।
+                जहां जन्म हरि-भक्त कहाई।।
+
+                और देवता चित्त न धरई।
+                हनुमत सेइ सर्ब सुख करई।।
+
+                संकट कटै मिटै सब पीरा।
+                जो सुमिरै हनुमत बलबीरा।।
+
+                जै जै जै हनुमान गोसाईं।
+                कृपा करहु गुरुदेव की नाईं।।
+
+                जो सत बार पाठ कर कोई।
+                छूटहि बंदि महा सुख होई।।
+
+                जो यह पढ़ै हनुमान चालीसा।
+                होय सिद्धि साखी गौरीसा।।
+
+                तुलसीदास सदा हरि चेरा।
+                कीजै नाथ हृदय मंह डेरा।। 
+
+                <strong>॥ दोहा ॥</strong>
+                पवन तनय संकट हरन, मंगल मूरति रूप।
+                राम लखन सीता सहित, हृदय बसहु सुर भूप।।
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Jas Pachra Geet -->
+    <div id="jas-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('jas')">&times;</span>
+            <h2 style="color: var(--secondary); margin-bottom: 20px;">जस पचरा गीत</h2>
+            <div class="modal-text-dark">
+                हस के उठे वि हस के माता, जा चंदन पर थार भवानी।
+                नींबू जटा, जटा पर नरियर, आस पास नरियर के बाड़ी।
+                केकती केवड़ा सदा सरवर, सरवर देखत हंस विराजे।
+                हंस म दाई के साजे, पहुना ऊपर दाई विराजे।
+                दाई के संग म भैरव साजे, भैरव संग लंगूर विराजे।
+                अन्नस मन्नस कुंज निवारे, धर्म ध्वजा लहराए...
+                लहराए ओ मैया, सेवा में बाग लगाए हो मां...
+                सेवा में बाग लगाए.. लगाए हो मैया, सेवा में बाग लगाए हो मां।
+                
+                जब लोहपुर ले उतरे लोअंजर, अंग भर सिंदूर नयन में काजर।
+                कौन पनडव मत सुनावे, हाथ में शंकर वेद बतावे।
+                नव दस पलकी लिए सजाए, बाहे कुल तोर उठे भवानी।
+                खड़ग क्षार खप्पर डारे, कोटि कोटि मुक्तन उठ जाए।
+                जभे पुजारी पूजा पावे, घोरी घोरी चंदन महल लगाए।
+                सर्प सोन के कलश मढ़ाये, दाई तोला उमा बताएं।
+                भैरव तोर पलकी सजाए, लंगूरे ह तोर दियाना जलाएं।
+                जलाए हो माता, सेवा में बाग लगाए...
+                लगाए हो मैया, सेवा में बाग लगाए हो मां।
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Mahishasur Mardini Stotram -->
+    <div id="stotram-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('stotram')">&times;</span>
+            <h2 style="color: var(--secondary); margin-bottom: 20px;">महिषासुरमर्दिनि स्तोत्रम्</h2>
+            <div class="modal-text-dark" style="text-align: left; font-size: 1rem;">
+                अयि गिरिनन्दिनि नन्दितमेदिनि विश्वविनोदिनि नन्दिनुते
+                गिरिवरविन्ध्यशिरोऽधिनिवासिनि विष्णुविलासिनि जिष्णुनुते ।
+                भगवति हे शितिकण्ठकुटुम्बिनि भूरिकुटुम्बिनि भूरिकृते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १ ॥
+
+                सुरवरवर्षिणि दुर्धरधर्षिणि दुर्मुखमर्षिणि हर्षरते
+                त्रिभुवनपोषिणि शङ्करतोषिणि किल्बिषमोषिणि घोषरते
+                दनुजनिरोषिणि दितिसुतरोषिणि दुर्मदशोषिणि सिन्धुसुते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ २ ॥
+
+                अयि जगदम्ब मदम्ब कदम्ब वनप्रियवासिनि हासरते
+                शिखरि शिरोमणि तुङ्गहिमलय शृङ्गनिजालय मध्यगते ।
+                मधुमधुरे मधुकैटभगञ्जिनि कैटभभञ्जिनि रासरते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ३ ॥
+
+                अयि शतखण्ड विखण्डितरुण्ड वितुण्डितशुण्द गजाधिपते
+                रिपुगजगण्ड विदारणचण्ड पराक्रमशुण्ड मृगाधिपते ।
+                निजभुजदण्ड निपातितखण्ड विपातितमुण्ड भटाधिपते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ४ ॥
+
+                अयि रणदुर्मद शत्रुवधोदित दुर्धरनिर्जर शक्तिभृते
+                चतुरविचार धुरीणमहाशिव दूतकृत प्रमथाधिपते ।
+                दुरितदुरीह दुराशयदुर्मति दानवदुत कृतान्तमते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ५ ॥
+
+                अयि शरणागत वैरिवधुवर वीरवराभय दायकरे
+                त्रिभुवनमस्तक शुलविरोधि शिरोऽधिकृतामल शुलकरे ।
+                दुमिदुमितामर धुन्दुभिनादमहोमुखरीकृत दिङ्मकरे
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ६ ॥
+
+                अयि निजहुङ्कृति मात्रनिराकृत धूम्रविलोचन धूम्रशते
+                समरविशोषित शोणितबीज समुद्भवशोणित बीजलते ।
+                शिवशिवशुम्भ निशुम्भमहाहव तर्पितभूत पिशाचरते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ७ ॥
+
+                धनुरनुषङ्ग रणक्षणसङ्ग परिस्फुरदङ्ग नटत्कटके
+                कनकपिशङ्ग पृषत्कनिषङ्ग रसद्भटशृङ्ग हताबटुके ।
+                कृतचतुरङ्ग बलक्षितिरङ्ग घटद्बहुरङ्ग रटद्बटुके
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ८ ॥
+
+                सुरललना ततथेयि तथेयि कृताभिनयोदर नृत्यरते
+                कृत कुकुथः कुकुथो गडदादिकताल कुतूहल गानरते ।
+                धुधुकुट धुक्कुट धिंधिमित ध्वनि धीर मृदंग निनादरते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ९ ॥
+
+                जय जय जप्य जयेजयशब्द परस्तुति तत्परविश्वनुते
+                झणझणझिञ्झिमि झिङ्कृत नूपुरशिञ्जितमोहित भूतपते ।
+                नटित नटार्ध नटी नट नायक नाटितनाट्य सुगानरते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १० ॥
+
+                अयि सुमनःसुमनःसुमनः सुमनःसुमनोहरकान्तियुते
+                श्रितरजनी रजनीरजनी रजनीरजनी करवक्त्रवृते ।
+                सुनयनविभ्रमर भ्रमरभ्रमर भ्रमरभ्रमराधिपते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ ११ ॥
+
+                सहितमहाहव मल्लमतल्लिक मल्लितरल्लक मल्लरते
+                विरचितवल्लिक पल्लिकमल्लिक झिल्लिकभिल्लिक वर्गवृते ।
+                शितकृतफुल्ल समुल्लसितारुण तल्लजपल्लव सल्ललिते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १२ ॥
+
+                अविरलगण्ड गलन्मदमेदुर मत्तमतङ्ग जराजपते
+                त्रिभुवनभुषण भूतकलानिधि रूपपयोनिधि राजसुते ।
+                अयि सुदतीजन लालसमानस मोहन मन्मथराजसुते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १३ ॥
+
+                कमलदलामल कोमलकान्ति कलाकलितामल भाललते
+                सकलविलास कलानिलयक्रम केलिचलत्कल हंसकुले ।
+                अलिकुलसङ्कुल कुवलयमण्डल मौलिमिलद्बकुलालिकुले
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १४ ॥
+
+                करमुरलीरव वीजितकूजित लज्जितकोकिल मञ्जुमते
+                मिलितपुलिन्द मनोहरगुञ्जित रञ्जितशैल निकुञ्जगते ।
+                निजगणभूत महाशबरीगण सद्गुणसम्भृत केलितले
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १५ ॥
+
+                कटितटपीत दुकूलविचित्र मयुखतिरस्कृत चन्द्ररुचे
+                प्रणतसुरासुर मौलिमणिस्फुर दंशुलसन्नख चन्द्ररुचे
+                जितकनकाचल मौलिमदोर्जित निर्भरकुञ्जर कुम्भकुचे
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १६ ॥
+
+                विजितसहस्रकरैक सहस्रकरैक सहस्रकरैकनुते
+                कृतसुरतारक सङ्गरतारक सङ्गरतारक सूनुसुते ।
+                सुरथसमाधि समानसमाधि समाधिसमाधि सुजातरते ।
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १७ ॥
+
+                पदकमलं करुणानिलये वरिवस्यति योऽनुदिनं सुशिवे
+                अयि कमले कमलानिलये कमलानिलयः स कथं न भवेत् ।
+                तव पदमेव परम्पदमित्यनुशीलयतो मम किं न शिवे
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १८ ॥
+
+                कनकलसत्कलसिन्धुजलैरनुषिञ्चति तेगुणरङ्गभुवम्
+                भजति स किं न शचीकुचकुम्भतटीपरिरम्भसुखानुभवम् ।
+                तव चरणं शरणं करवाणि नतामरवाणि निवासि शिवम्
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ १९ ॥
+
+                तव विमलेन्दुकुलं वदनेन्दुमलं सकलं ननु कूलयते
+                किमु पुरुहूतपुरीन्दु मुखी सुमुखीभिरसौ विमुखीक्रियते ।
+                मम तु मतं शिवनामधने भवती कृपया किमुत क्रियते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ २० ॥
+
+                अयि मयि दीन दयालुतया कृपयैव त्वया भवितव्यमुमे
+                अयि जगतो जननी कृपयासि यथासि तथानुमितासिरते ।
+                यदुचितमत्र भवत्युररीकुरुतादुरुतापमपाकुरुते
+                जय जय हे महिषासुरमर्दिनि रम्यकपर्दिनि शैलसुते ॥ २१ ॥
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="font-family: 'Rozha One'; color: var(--primary);">BR01 Sanatan Creator</h2>
+        <p>Promoting Sanatan Dharma from the heart of Bihar (Patna).</p>
+        <div style="margin-top: 20px; font-size: 1.5rem;">
+            <a href="https://whatsapp.com/channel/0029VbBAHt6I1rcdNgQOaX0L" style="color:white; margin:0 10px;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1AJ4JrSmeP/" style="color:white; margin:0 10px;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/br01_sanatan_creator?igsh=MWpyeWFwYml3b2F6YQ==" style="color:white; margin:0 10px;"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/BR01SANATAN" style="color:white; margin:0 10px;"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://youtube.com/@allrounder-z4t?si=eeiQxvLguKNPlsDq" style="color:white; margin:0 10px;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 BR01 Sanatan Creator. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            // Hide all modals first
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(m => m.style.display = 'none');
+
+            // Open specific modal
+            const modal = document.getElementById(id + '-modal');
+            if(modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id + '-modal');
+            if(modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
