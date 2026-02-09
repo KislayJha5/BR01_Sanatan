@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- PASTE THE GOOGLE CODE HERE -->
-    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CODE_HERE" />
 
     <title>BR01 Sanatan Creator | Dharma & Sewa</title>
     <!-- Icons and Fonts -->
@@ -41,7 +38,7 @@
         /* --- Header --- */
         header {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
-            padding: 1rem 5%;
+            padding: 0.5rem 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -52,16 +49,30 @@
             border-bottom: 3px solid var(--accent);
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 60px; /* Adjust size as needed */
+            width: auto;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .logo-text {
             font-family: 'Rozha One', serif;
             font-size: 1.5rem;
             color: var(--white);
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-decoration: none;
         }
 
-        .logo span { color: var(--accent); }
+        .logo-text span { color: var(--accent); }
 
         nav {
             display: flex;
@@ -74,6 +85,7 @@
             font-weight: bold;
             transition: 0.3s;
             position: relative;
+            font-size: 0.9rem;
         }
 
         nav a:hover { color: var(--accent); }
@@ -123,9 +135,23 @@
 
         .tagline {
             font-size: 1.4rem;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #ffe0b2;
             font-style: italic;
+        }
+
+        /* Daily Quote Style */
+        .daily-vichar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--accent);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            display: inline-block;
+            max-width: 90%;
         }
 
         @keyframes float {
@@ -155,6 +181,62 @@
             font-size: 1.5rem;
             color: var(--primary);
             margin-top: 10px;
+        }
+
+        /* --- Mission & Disclaimer Section --- */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .mission-card {
+            background: linear-gradient(to right bottom, #fff, #fff8e1);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 100px; height: 100px;
+            background: rgba(255, 153, 51, 0.1);
+            border-radius: 0 0 0 100%;
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .mission-card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Rozha One', serif;
+        }
+
+        .mission-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a2c2a;
+        }
+
+        .disclaimer-box {
+            background: #fff0f0;
+            border: 2px dashed #ff0000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+            color: #800000;
         }
 
         /* --- History Section --- */
@@ -212,6 +294,7 @@
             color: var(--text-dark);
             font-weight: bold;
             border: 1px solid var(--primary);
+            white-space: nowrap;
         }
 
         /* --- Mantra Section --- */
@@ -335,6 +418,30 @@
         .x-icon { color: #000; }
         .wa { color: var(--whatsapp); }
 
+        /* --- Floating Share Button --- */
+        .floating-share {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.3s;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .floating-share:hover {
+            transform: scale(1.1);
+        }
+
         /* --- Modal --- */
         .modal {
             display: none;
@@ -400,11 +507,13 @@
 
         /* Mobile Adjustments */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav { flex-wrap: wrap; justify-content: center; }
+            header { flex-direction: column; gap: 10px; padding: 10px; }
+            .logo-text { font-size: 1.2rem; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
             h1 { font-size: 2.2rem; }
             .hero { min-height: 60vh; }
             .festival-item { flex-direction: column; gap: 10px; text-align: center; }
+            .floating-share { bottom: 20px; right: 20px; padding: 10px 15px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -412,9 +521,13 @@
 
     <!-- Header -->
     <header>
-        <a href="#" class="logo"><i class="fas fa-om"></i> BR01 <span>Sanatan</span> Creator</a>
+        <a href="#" class="logo-container">
+            <!-- Ensure BR_01.png is in the same folder -->
+            <img src="BR_01.png" alt="BR01 Sanatan Creator" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-text">BR01 <span>Sanatan</span> Creator</div>
+        </a>
         <nav>
-            <a href="#history">History</a>
+            <a href="#mission">Mission</a>
             <a href="#festivals">Festivals</a>
             <a href="#mantra">Mantra</a>
             <a href="#library">Scriptures</a>
@@ -427,10 +540,52 @@
         <div class="hero-content">
             <div class="om-symbol">ॐ</div>
             <h1>॥ धर्मो रक्षति रक्षितः ॥</h1>
+            
+            <!-- Daily Quote Section -->
+            <div id="daily-vichar" class="daily-vichar">
+                "Satyam Vada, Dharmam Chara." <br> <small>(Speak the truth, practice Dharma.)</small>
+            </div>
+
             <p class="tagline">Connecting the digital world to the eternal roots of Sanatan Dharma.</p>
             <a href="#social" class="btn-read" style="background: var(--white); color: var(--secondary); font-weight: bold;">Join Our Community</a>
         </div>
     </section>
+
+    <!-- Mission & Disclaimer Section -->
+    <div class="section-container" id="mission">
+        <h2 class="section-title">Our Mission</h2>
+        
+        <div class="mission-grid">
+            <!-- Mission Card -->
+            <div class="mission-card">
+                <i class="fas fa-bullseye mission-icon"></i>
+                <h3>Our Goal (लक्ष्य)</h3>
+                <p>
+                    <strong>गौ हत्या बंद हो। (Stop Cow Slaughter)</strong><br>
+                    गौ माता को राष्ट्र माता घोषित करवाना।<br>
+                    (To declare Mother Cow as the Mother of the Nation.)
+                </p>
+            </div>
+            
+            <!-- Vision Card -->
+            <div class="mission-card">
+                <i class="fas fa-dharmachakra mission-icon"></i>
+                <h3>Sanatan Values</h3>
+                <p>
+                    Promoting the eternal values of Sanatan Dharma, peace, and universal brotherhood.
+                    "Vasudhaiva Kutumbakam" - The World is One Family.
+                </p>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer-box">
+            <i class="fas fa-exclamation-triangle"></i> <strong>Disclaimer / सूचना:</strong><br>
+            We are not associated with any political party. <br>
+            We do not promote hate towards any religion. <br>
+            Our sole purpose is the service of Sanatan Dharma and Gau Mata.
+        </div>
+    </div>
 
     <!-- History of Sanatan Dharma Section -->
     <div class="section-container" id="history">
@@ -444,15 +599,6 @@
             <p>
                 The roots of Sanatan Dharma go back thousands of years to the Indus Valley Civilization and the Vedic period. Its wisdom is preserved in the Vedas (Rigveda, Samaveda, Yajurveda, Atharvaveda), the Upanishads (philosophical texts), the Puranas, and the great epics: the Ramayana and the Mahabharata (which includes the Bhagavad Gita).
             </p>
-            <h3>Core Beliefs</h3>
-            <p>
-                At its core, Sanatan Dharma believes in:
-                <br><strong>Brahman:</strong> The ultimate, formless, infinite reality.
-                <br><strong>Atman:</strong> The eternal soul within every being.
-                <br><strong>Karma:</strong> The law of cause and effect.
-                <br><strong>Moksha:</strong> Liberation from the cycle of birth and death.
-                <br>It champions the idea of "Vasudhaiva Kutumbakam" — The World is One Family.
-            </p>
         </div>
     </div>
 
@@ -462,51 +608,99 @@
         <ul class="festival-list">
             <li class="festival-item">
                 <span class="festival-name">Maha Shivaratri</span>
-                <span class="festival-date">15 February 2026 (Sunday)</span>
+                <span class="festival-date">15 February</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Shivaji Jayanti</span>
+                <span class="festival-date">19 February</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Holi (Dhulandi)</span>
-                <span class="festival-date">4 March 2026 (Wednesday)</span>
+                <span class="festival-date">4 March</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Chaitra Navratri Starts</span>
-                <span class="festival-date">19 March 2026 (Thursday)</span>
+                <span class="festival-date">19 March</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Ram Navami</span>
-                <span class="festival-date">27 March 2026 (Friday)</span>
+                <span class="festival-date">27 March</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Hanuman Jayanti</span>
-                <span class="festival-date">2 April 2026 (Thursday)</span>
+                <span class="festival-date">2 April</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Hindu New Year (Nav Varsh)</span>
+                <span class="festival-date">10 April</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Vaisakhi</span>
+                <span class="festival-date">14 April</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Akshaya Tritiya</span>
+                <span class="festival-date">19 April</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Buddha Purnima</span>
+                <span class="festival-date">1 May</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Savitri Puja</span>
+                <span class="festival-date">16 May</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Jagannath Rath Yatra</span>
+                <span class="festival-date">16 July</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Ashadhi Ekadashi</span>
+                <span class="festival-date">25 July</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Guru Purnima</span>
+                <span class="festival-date">29 July</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Naag Panchami</span>
+                <span class="festival-date">17 August</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Tulsi Das Jayanti</span>
+                <span class="festival-date">19 August</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Raksha Bandhan</span>
-                <span class="festival-date">27 August 2026 (Thursday)</span>
+                <span class="festival-date">27 August</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Krishna Janmashtami</span>
-                <span class="festival-date">4 September 2026 (Friday)</span>
+                <span class="festival-date">4 September</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Ganesh Chaturthi</span>
-                <span class="festival-date">14 September 2026 (Monday)</span>
+                <span class="festival-date">14 September</span>
+            </li>
+            <li class="festival-item">
+                <span class="festival-name">Anant Chaturdashi</span>
+                <span class="festival-date">25 September</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Shardiya Navratri Starts</span>
-                <span class="festival-date">11 October 2026 (Sunday)</span>
+                <span class="festival-date">11 October</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Durga Puja (Vijayadashami)</span>
-                <span class="festival-date">20 October 2026 (Tuesday)</span>
+                <span class="festival-date">20 October</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Diwali (Deepavali)</span>
-                <span class="festival-date">8 November 2026 (Sunday)</span>
+                <span class="festival-date">8 November</span>
             </li>
             <li class="festival-item">
                 <span class="festival-name">Chhath Puja (Sandhya Arghya)</span>
-                <span class="festival-date">14 November 2026 (Saturday)</span>
+                <span class="festival-date">14 November</span>
             </li>
         </ul>
     </div>
@@ -526,7 +720,7 @@
                 <p class="meaning-text">"मैं राम, रामभद्र, रामचंद्र, विधात स्वरूप, श्री रघुनाथ जी एवं माता श्री सीता जी के स्वामी की वंदना करता हूं।"</p>
             </div>
 
-            <!-- New Krishna Mantra (Added as requested) -->
+            <!-- New Krishna Mantra -->
             <div class="mantra-card">
                 <div class="mantra-title"><i class="fas fa-feather-alt"></i> Krishna Mantra</div>
                 <p class="sanskrit-text">
@@ -534,16 +728,6 @@
                     प्रणत क्लेश नाशाय गोविन्दाय नमो नमः ॥
                 </p>
                 <p class="meaning-text">"वसुदेव के पुत्र भगवान श्रीकृष्ण, जो परमात्मा हैं और सभी क्लेशों (दुःखों) को नाश करने वाले हैं, उन गोविंद को मैं बारंबार नमन करता हूँ।"</p>
-            </div>
-
-            <!-- 2. Ram Taraka Mantra -->
-            <div class="mantra-card">
-                <div class="mantra-title"><i class="fas fa-om"></i> Ram Taraka Mantra</div>
-                <p class="sanskrit-text">
-                    राम राम रामेति रमे रामे मनोरमे ।
-                    सहस्रनाम तत्तुल्यं रामनाम वरानने॥
-                </p>
-                <p class="meaning-text">"शिवजी पार्वतीजी से कहते हैं: 'राम' नाम विष्णु सहस्रनाम के तुल्य है। मैं भी इन्हीं मनोरम राम में रमता हूं।"</p>
             </div>
 
             <!-- 3. Gayatri Mantra -->
@@ -805,6 +989,11 @@
                 <small>Subscribe Now</small>
             </a>
         </div>
+    </div>
+
+    <!-- Floating Share Button -->
+    <div class="floating-share" onclick="shareWebsite()">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Share Website
     </div>
 
     <!-- ================= MODALS ================= -->
@@ -1106,12 +1295,10 @@
     </footer>
 
     <script>
+        // Modal Logic
         function openModal(id) {
-            // Hide all modals first
             const modals = document.querySelectorAll('.modal');
             modals.forEach(m => m.style.display = 'none');
-
-            // Open specific modal
             const modal = document.getElementById(id + '-modal');
             if(modal) {
                 modal.style.display = 'flex';
@@ -1127,13 +1314,40 @@
             }
         }
 
-        // Close on outside click
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Daily Quote Logic
+        const quotes = [
+            "Satyam Vada, Dharmam Chara.\n(Speak the truth, practice Dharma.)",
+            "Dharmo Rakshati Rakshitah.\n(Dharma protects those who protect it.)",
+            "Vasudhaiva Kutumbakam.\n(The world is one family.)",
+            "Yogah Karmasu Kaushalam.\n(Excellence in action is Yoga.)",
+            "Satyamev Jayate.\n(Truth alone triumphs.)",
+            "Ahinsa Paramo Dharma.\n(Non-violence is the supreme duty.)"
+        ];
+
+        function setDailyQuote() {
+            const quoteElement = document.getElementById('daily-vichar');
+            if(quoteElement) {
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                quoteElement.innerHTML = randomQuote.replace(/\n/g, "<br>");
+            }
+        }
+
+        // Share Website Logic
+        function shareWebsite() {
+            const text = "Check out this amazing Sanatan Dharma website with Festival Calendar 2026, Mantras & Bhajans: " + window.location.href;
+            const url = "https://wa.me/?text=" + encodeURIComponent(text);
+            window.open(url, '_blank');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', setDailyQuote);
     </script>
 </body>
 </html>
